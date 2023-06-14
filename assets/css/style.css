@@ -1,0 +1,393 @@
+/* Reset Styles
+https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+* {
+    margin: 0;
+  }
+
+html, body {
+    height: auto;
+    color: #fff;
+  }
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+
+input, button, textarea, select {
+    font: inherit;
+  }
+
+nav a {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 700;
+  height: 30px;
+  display: block;
+  border-left: 4px solid #fff;
+  padding-top: 5px;
+}
+
+
+nav a.secondary {
+  font-size: 15px;
+  margin-left: 5px;
+  border-left: 1px solid #fff;
+  font-weight: 400;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+p {
+  color: #fff;
+}
+
+ul {
+  margin-block-start: 0;
+  padding-inline-start: 0;
+}
+ 
+#root, #__next {
+    isolation: isolate;
+  }
+
+/* General Styles */
+@font-face {
+  font-family: 'Visby CF';
+  src: url('../fonts/VisbyCF-Medium.eot');
+  src: local('Visby CF Medium'), local('VisbyCF-Medium'),
+      url('../fonts/VisbyCF-Medium.eot') format('embedded-opentype'),
+      url('../fonts/VisbyCF-Medium.woff2') format('woff2'),
+      url('../fonts/VisbyCF-Medium.woff') format('woff'),
+      url('../fonts/VisbyCF-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Visby CF';
+  src: url('VisbyCF-Bold.eot');
+  src: local('Visby CF Bold'), local('VisbyCF-Bold'),
+      url('../fonts/VisbyCF-Bold.eot') format('embedded-opentype'),
+      url('../fonts/VisbyCF-Bold.woff2') format('woff2'),
+      url('../fonts/VisbyCF-Bold.woff') format('woff'),
+      url('../fonts/VisbyCF-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merryweather';
+  src: url('Merryweather.eot');
+  src: local('Merryweather'), local('Merryweather'),
+      url('../fonts/merryweather/Merriweather-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Visby CF';
+  background-color: black;
+}
+
+header {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+}
+
+header img {
+  max-width: 80px;
+  margin: 0 auto;
+}
+
+#grid{
+position: fixed;
+width: 100%;
+}
+
+#grid .container {
+  width: 1170px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+
+#grid .col {
+  width: 16.66666667%;
+  float: left;
+  height: 100vh;
+  border-right: 1px solid #fff;
+}
+
+#main {
+  height: 100%;
+  width: 100%;
+}
+
+.fullpage {
+  font-family: sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+
+#hero video {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+#hero:before {
+    content: '';
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+#hero .intro {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: left;
+    -webkit-box-align: left;
+    -ms-flex-align: left;
+    align-items: center;
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
+    -webkit-justify-content: left;
+    justify-content: left;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    padding-bottom: 89px;
+    text-align: left;
+    padding-left: 3rem;
+} 
+
+#hero .intro .container {
+  max-width: 500px;
+}
+
+#hero h1{
+  font-family: 'Visby CF', sans-serif;
+  font-weight: normal;
+  color: #e2d325;
+}
+
+h1.normal {
+  font-size:4em;
+  line-height: 1em;
+}
+
+h1.big {
+  font-size: 9em;
+  line-height: 1em;
+  color: #fff!important;
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+
+#hero p{
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+#hero button {
+  margin-top: 20px;
+  background-color: #e2d326;
+  border: 0;
+  border-radius: 30px;
+  padding: 10px 25px;
+  color: #67494d;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+#hero .PrLocations{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 3rem;
+}
+
+#hero .PrLocations .project, #hero .PrLocations .location {
+  display: block;
+}
+
+#hero .PrLocations .project{
+  font-size: 14px;
+}
+
+#hero .PrLocations .location{
+  font-size: 18px;
+  text-transform: uppercase;
+  position: relative;
+}
+​#hero .PrLocations svg{
+  fill: #e2d326!important;
+}
+
+#hero .PrLocations img{
+  max-width: 10px;
+  float: left;
+  padding-top: 5px;
+  margin-right: 5px;
+}
+
+.icon-arrow {
+  position: absolute;
+  overflow: hidden;
+  margin-left: 4px;
+  top: 26px;
+  right: 0;
+}
+
+#features {
+  background: #f9e0e2;
+}
+
+#features .section_two_col{
+  width: 98%;
+  margin: auto;
+  padding: 120px 0px;
+  position: relative;
+}
+.feature {
+  display: flex;
+  padding-top: 3rem;
+}
+
+.feature .container {
+  width: 50%;
+}
+
+.feature h2 {
+  font-family: 'Merryweather', serif;
+  color:#352224;
+  font-size: 3em;
+}
+
+.feature h2, .feature p, .feature span{
+  color:#352224
+}
+
+.feature p {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 50px;
+}
+.section .feat-container .text-container {
+  padding: 2em ;
+}
+
+.section .keys {
+  margin-top: 30px;
+  display: flex;
+}
+
+.keys img {
+  width: 60px;
+  margin: 0 auto;
+}
+
+.keys .item {
+  padding: 2em;
+  border-style: solid;
+  align-items: center;
+  justify-items: center;
+  border-width: 2px 1px 2px 2px;
+  border-color: #000;
+}
+
+.keys .item.last {
+  border-width: 2px;
+}
+
+.btn_section {
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  font-family: Visby CF;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: #fff;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  padding: 12px 22px;
+  border: 1.2px solid #fff;
+  border-radius: 32px;
+  transition: all 1s ease;
+}
+
+@media screen and (max-width: 800px){
+  
+  #hero .intro {
+    padding-bottom: 40px;
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  #hero .PrLocations{
+    display: none;
+  }
+  #hero p {
+    font-size: 16px;
+  }
+  .feature {
+    flex-direction: column;
+  }
+  .feature .container {
+    width: 100%;
+ }
+ .keys .item {
+  padding: 10px
+ }
+ #features .section_two_col { 
+  padding: 0;
+  width: 94%;
+ }
+
+}
