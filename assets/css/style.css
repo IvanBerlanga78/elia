@@ -200,7 +200,6 @@ header img {
 #wrap {
   min-height: 100%;
   position: relative;
-  z-index: 10;
 }
 
 #main {
@@ -222,16 +221,17 @@ header img {
     height: 100%;
     max-height: 100%;
     object-fit: cover;
+    z-index: 1;
   }
 
-#hero:before {
-    content: '';
+#hero .overlay {
     position: absolute;
-    background: rgba(249, 224, 226, 0.9);
+    background: rgba(249, 224, 226, 0.8);
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 2;
   }
 
 #hero .intro {
@@ -246,7 +246,7 @@ header img {
     max-height: 100%;
     padding-bottom: 89px;
     text-align: center;
-    padding-left: 3rem;
+    z-index: 3;
 } 
 
 #hero .intro .container {
@@ -318,7 +318,11 @@ h1.big {
   transform: translateX(30%);
 }
 
-#hero .Locations{
+#hero .Locations {
+  max-width: 1100px;
+}
+
+#hero .Locations .container{
   display: flex;
   justify-content: space-between;
   position: absolute;
@@ -327,6 +331,7 @@ h1.big {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 3rem;
+  z-index: 5;
 }
 
 
@@ -371,6 +376,7 @@ h1.big {
   background: var(--main-bg-color);
   padding-top: 30px;
   position: relative;
+  z-index: 10;
 }
 
 #features .section_two_col{
@@ -444,6 +450,13 @@ h1.big {
   height: 400px;
   bottom: 0;
 }
+#contact .container {
+  padding-top: 50px;
+}
+
+#contact a{
+  color:var(--main-bg-color);
+}
 
 .relative {
   position: relative;
@@ -457,6 +470,7 @@ h1.big {
 .flex {
   display: flex;
 }
+
 .justify-end {
   justify-content: end;
 }
@@ -480,6 +494,9 @@ h1.big {
   bottom: -120px;
 }
 
+.full {
+  width:100%;
+}
 .md-w-1-2 {
   width: 50%;
 }
@@ -492,6 +509,12 @@ h1.big {
   width: 33.333333%;
 }
 
+.md-w-1-5{
+  width: 20%;
+}
+.md-w-2-5{
+  width: 40%;
+}
 
 @media screen and (max-width: 800px){
   
