@@ -55,7 +55,6 @@ let animateVer = (element,position) => {
 
 document.addEventListener('scroll', function(e) {
   lastKnownScrollPosition = window.scrollY;
-  console.log (isInViewport(d));
     window.requestAnimationFrame(function() {
         if(isInViewport(d)===true) {
             animateHor(item1,lastKnownScrollPosition*.2)
