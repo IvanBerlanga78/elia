@@ -1,6 +1,6 @@
 // Add an event listener listening for scroll
 
-
+/*
 window.addEventListener("scroll", blurContent);
 
 function blurContent() {
@@ -17,8 +17,7 @@ function blurContent() {
   }
   
 }
-
-
+*/
 // Transform translate items on scroll
 // Source credit: http://thenewcode.com/279/Rotate-Elements-on-Scroll-with-JavaScript
 
@@ -55,6 +54,7 @@ document.addEventListener('scroll', function(e) {
 // Parallax with Rellax
 
   // Also can pass in optional settings block
+  
   var rellax = new Rellax('.rellax', {
     speed: -2,
     center: false,
@@ -64,14 +64,19 @@ document.addEventListener('scroll', function(e) {
     horizontal: false
   });
 
+
+
 //Intro screen
 
-// element
 imagesLoaded( document.querySelector('#main'), function( instance ) {
     setTimeout(function(){
         document.body.classList.add('loaded');
     }, 300);
 
   });
+
+// Hack to include contact to the height of the main page
+
+document.body.style.height = document.getElementById("wrap").clientHeight + 400 + 'px';
 
 
