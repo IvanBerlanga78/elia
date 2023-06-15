@@ -451,11 +451,7 @@ h1.big {
   }
 
   #hero .intro {
-    height: auto;
-    position: relative;
     padding-bottom: 40px;
-    padding-top: 60px;
-    text-align: center;
     padding-left: 1em;
     padding-right: 1em;
   }
@@ -471,9 +467,7 @@ h1.big {
 
   }
   #hero .Locations{
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+    display: none;
   }
   #hero p {
     font-size: 16px;
