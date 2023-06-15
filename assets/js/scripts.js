@@ -1,3 +1,26 @@
+//Helper Functions
+//https://ultimatecourses.com/blog/javascript-hasclass-addclass-removeclass-toggleclass
+
+function hasClass(elem, className) {
+    return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+}
+
+function addClass(elem, className) {
+    if (!hasClass(elem, className)) {
+        elem.className += ' ' + className;
+    }
+}
+
+function removeClass(elem, className) {
+    var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+    if (hasClass(elem, className)) {
+        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+            newClass = newClass.replace(' ' + className + ' ', ' ');
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    }
+}
+
 // Add an event listener listening for scroll
 
 /*
@@ -29,20 +52,86 @@ function isInViewport(element) {
     );
 }
 
+
+
+
+/** ---------------------------- //
+ *  @group viewport trigger script 
+ * for adding or removing classes from elements in view within viewport
+*/
+  
+var animationElementsHTML = document.getElementsByClassName('scrollH');
+var animationElements = Array.from(animationElementsHTML);
+
+// ps: Let's FIRST disable triggering on small devices!
+var isMobile = window.matchMedia("only screen and (max-width: 768px)");
+if (isMobile.matches) {
+    animationElements.removeClass('animation-element');
+}
+
+
+
+$(document).ready(function() {
+
+    /** ---------------------------- //
+     *  @group viewport trigger script 
+     * for adding or removing classes from elements in view within viewport
+    */
+  
+    var $animationElements = $('.scrollH');
+    var $window = $(window);
+
+    // ps: Let's FIRST disable triggering on small devices!
+    var isMobile = window.matchMedia("only screen and (max-width: 768px)");
+    if (isMobile.matches) {
+        $animationElements.removeClass('animation-element');
+    }
+
+    function checkIfInView() {
+
+        var windowHeight = $window.height();
+        var windowTopPosition = $window.scrollTop();
+        var windowBottomPosition = (windowTopPosition + windowHeight);
+
+        $.each($animationElements, function () {
+            var $element = $(this);
+            var elementHeight = $element.outerHeight();
+            var elementTopPosition = $element.offset().top;
+            var elementBottomPosition = (elementTopPosition + elementHeight);
+
+//check to see if this current container is within viewport
+            if ((elementBottomPosition >= windowTopPosition) &&
+                (elementTopPosition <= windowBottomPosition)) {
+                $element.addClass('in-view');
+            } else {
+                $element.removeClass('in-view');
+            }
+        });
+    }
+
+    $window.on('scroll resize', checkIfInView);
+    $window.trigger('scroll');
+});
+
+
+
+
+
+
 // Transform translate items on scroll
 // Source credit: http://thenewcode.com/279/Rotate-Elements-on-Scroll-with-JavaScript
 
 let item1 = document.getElementById("item1"),
 item2 = document.getElementById("item2"),
-item3 = document.getElementById("scrollDown");
+item3 = document.getElementById("scrollDown"),
+featHead = document.getElementsByClassName('in-view');
 
 let d = document.querySelector("#scrollDown");
 
-
-
-    
+/*
 let container = document.getElementById("headingContainer")
 let rectContainer = container.getBoundingClientRect();
+*/
 
 let animateHor = (element,position) => {
      element.style.transform = `translateX(${position}px)`
@@ -59,9 +148,9 @@ document.addEventListener('scroll', function(e) {
         if(isInViewport(d)===true) {
             animateHor(item1,lastKnownScrollPosition*.2)
             animateHor(item2,lastKnownScrollPosition*-.2)
-            animateVer(item3,lastKnownScrollPosition*.2)
-            animateVer(item4,lastKnownScrollPosition*.2)
+            animateVer(item3,lastKnownScrollPosition*-.2)            
         }
+ 
       });
 });
 
