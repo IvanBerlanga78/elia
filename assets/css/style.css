@@ -1,6 +1,13 @@
 /* Reset Styles
 https://www.joshwcomeau.com/css/custom-css-reset/ */
 
+:root {
+  --main-bg-color: #f9e0e2;
+  --main-text-color: #352224;
+  --secondary-text-color:#a52a2a;
+  --super-big-h-size:9em;
+  --big-h-size:4em;
+}
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -12,7 +19,7 @@ https://www.joshwcomeau.com/css/custom-css-reset/ */
 
 html, body {
     height: auto;
-    color: #fff;
+    color: var(--main-bg-color);
   }
 
 body {
@@ -29,34 +36,17 @@ input, button, textarea, select {
     font: inherit;
   }
 
-nav a {
-  padding-left: 10px;
-  padding-right: 10px;
-  font-weight: 700;
-  height: 30px;
-  display: block;
-  border-left: 4px solid #fff;
-  padding-top: 5px;
-}
-
-
-nav a.secondary {
-  font-size: 15px;
-  margin-left: 5px;
-  border-left: 1px solid #fff;
-  font-weight: 400;
-}
 
 a {
-  color: #fff;
   text-decoration: none;
   font-size: 18px;
+  color: var(--main-text-color);
 }
 
 p {
-  color: #fff;
+  color: var(--main-text-color);
+  font-size: 18px;
 }
-
 ul {
   margin-block-start: 0;
   padding-inline-start: 0;
@@ -67,6 +57,7 @@ ul {
   }
 
 /* General Styles */
+
 @font-face {
   font-family: 'Visby CF';
   src: url('../fonts/VisbyCF-Medium.eot');
@@ -91,14 +82,99 @@ ul {
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Merryweather';
-  src: url('Merryweather.eot');
-  src: local('Merryweather'), local('Merryweather'),
-      url('../fonts/merryweather/Merriweather-BoldItalic.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
+
+/* loader styles */
+
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background:var(--secondary-text-color);
+  z-index: 1000;
 }
+
+#loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+
+#loader {
+  z-index: 1001; /* anything higher than z-index: 1000 of .loader-section */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: left;
+  -webkit-box-align: left;
+  -ms-flex-align: left;
+  align-items: center;
+  -webkit-box-pack: left;
+  -ms-flex-pack: left;
+  -webkit-justify-content: left;
+  justify-content: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  padding-bottom: 89px;
+  text-align: center
+}
+
+#loader-wrapper .logo {
+  width: 150px;
+  margin: 0 auto;
+}
+#loader-wrapper p {
+  color: var(--main-bg-color);
+}
+#content {
+  margin: 0 auto;
+  padding-bottom: 50px;
+  width: 80%;
+  max-width: 978px;
+}
+
+.no-js #loader-wrapper {
+  display: none;
+}
+
+/* Loaded */
+.loaded #loader-wrapper .loader-section.section-left {
+  -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(-100%);  /* IE 9 */
+  transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+  -webkit-transform: translateX(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(100%);  /* IE 9 */
+  transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded #loader-wrapper {
+  visibility: hidden;
+  position: absolute;
+}
+
+.loaded #loader {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+}
+
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+ 
+    -webkit-transition: all 0.3s 0.3s ease-out;
+            transition: all 0.3s 0.3s ease-out;
+}
+/* loader styles */
 
 html,
 body {
@@ -106,7 +182,7 @@ body {
   height: 100%;
   width: 100%;
   font-family: 'Visby CF';
-  background-color: black;
+  background-color: var(--main-bg-color);
 }
 
 header {
@@ -122,24 +198,6 @@ header img {
   margin: 0 auto;
 }
 
-#grid{
-position: fixed;
-width: 100%;
-}
-
-#grid .container {
-  width: 1170px;
-  margin: 0 auto;
-  height: 100%;
-}
-
-
-#grid .col {
-  width: 16.66666667%;
-  float: left;
-  height: 100vh;
-  border-right: 1px solid #fff;
-}
 
 #main {
   height: 100%;
@@ -163,7 +221,7 @@ width: 100%;
 #hero:before {
     content: '';
     position: absolute;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(249, 224, 226, 0.9);
     top: 0;
     right: 0;
     bottom: 0;
@@ -182,7 +240,7 @@ width: 100%;
     -webkit-box-pack: left;
     -ms-flex-pack: left;
     -webkit-justify-content: left;
-    justify-content: left;
+    justify-content: center;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -190,7 +248,7 @@ width: 100%;
     height: 100%;
     max-height: 100%;
     padding-bottom: 89px;
-    text-align: left;
+    text-align: center;
     padding-left: 3rem;
 } 
 
@@ -201,7 +259,7 @@ width: 100%;
 #hero h1{
   font-family: 'Visby CF', sans-serif;
   font-weight: normal;
-  color: #e2d325;
+  color: var(--secondary-text-color);
 }
 
 h1.normal {
@@ -212,26 +270,24 @@ h1.normal {
 h1.big {
   font-size: 9em;
   line-height: 1em;
-  color: #fff!important;
+  color:var(--secondary-text-color)!important;
   margin-top: -20px;
   margin-bottom: 10px;
 }
 
 #hero p{
-  font-size: 20px;
-  font-weight: 600;
   margin-top: 20px;
 }
 
 #hero button {
   margin-top: 20px;
-  background-color: #e2d326;
+  background-color: var(--secondary-text-color);
   border: 0;
   border-radius: 30px;
   padding: 10px 25px;
-  color: #67494d;
-  font-size: 20px;
-  font-weight: 600;
+  color: var(--main-bg-color);
+  font-size: 18px;
+  font-weight: 400;
   letter-spacing: 1px;
   cursor: pointer;
 }
@@ -280,7 +336,8 @@ h1.big {
 }
 
 #features {
-  background: #f9e0e2;
+  background: var(--main-bg-color);
+  padding-top: 30px;
 }
 
 #features .section_two_col{
@@ -295,18 +352,17 @@ h1.big {
 }
 
 .feature h2 {
-  color:#352224;
-  font-size: 4em;
+  color:var(--secondary-text-color);
+  font-size: var(--big-h-size);
   line-height: 1em;
 }
 
-.feature h2, .feature p, .feature span{
-  color:#352224
+.feature p, .feature span{
+  color:var(--main-text-color)
 }
 
 .feature p {
-  font-size: 20px;
-  font-weight: 600;
+  font-weight: 400;
 }
 .section .feat-container .text-container {
   padding: 2em ;

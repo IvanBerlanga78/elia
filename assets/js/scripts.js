@@ -58,4 +58,14 @@ document.addEventListener('scroll', function(e) {
     horizontal: false
   });
 
+//Intro screen
+
+// element
+imagesLoaded( document.querySelector('#main'), function( instance ) {
+    setTimeout(function(){
+        document.body.classList.add('loaded');
+    }, 300);
+
+  });
+
 
