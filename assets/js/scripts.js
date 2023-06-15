@@ -18,13 +18,27 @@ function blurContent() {
   
 }
 */
+
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
 // Transform translate items on scroll
 // Source credit: http://thenewcode.com/279/Rotate-Elements-on-Scroll-with-JavaScript
 
 let item1 = document.getElementById("item1"),
 item2 = document.getElementById("item2"),
-item3 = document.getElementById("scrollDown"),
-item4 = document.querySelector(".Locations");
+item3 = document.getElementById("scrollDown");
+
+let d = document.querySelector("#scrollDown");
+
+
 
     
 let container = document.getElementById("headingContainer")
@@ -38,17 +52,18 @@ let animateVer = (element,position) => {
     element.style.transform = `translateY(${position}px)`
 }        
 
+
 document.addEventListener('scroll', function(e) {
   lastKnownScrollPosition = window.scrollY;
-    
-   window.requestAnimationFrame(function() {
-     
-      animateHor(item1,lastKnownScrollPosition*.2)
-      animateHor(item2,lastKnownScrollPosition*-.2)
-      animateVer(item3,lastKnownScrollPosition*.2)
-      animateVer(item4,lastKnownScrollPosition*.2)
-      
-    });
+  console.log (isInViewport(d));
+    window.requestAnimationFrame(function() {
+        if(isInViewport(d)===true) {
+            animateHor(item1,lastKnownScrollPosition*.2)
+            animateHor(item2,lastKnownScrollPosition*-.2)
+            animateVer(item3,lastKnownScrollPosition*.2)
+            animateVer(item4,lastKnownScrollPosition*.2)
+        }
+      });
 });
 
 // Parallax with Rellax
