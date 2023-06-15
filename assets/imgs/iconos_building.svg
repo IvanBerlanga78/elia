@@ -1,19 +1,60 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="uuid-28dbe17e-8531-40ac-83b5-17c6586f3f25" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <defs>
-    <style>
-      .uuid-95f7dc4b-393b-490b-8f0c-5253b4525d5a {
-        fill: #352224;
-      }
-    </style>
-  </defs>
-  <path class="uuid-95f7dc4b-393b-490b-8f0c-5253b4525d5a" d="m190,191.15H8v-120.2l60.6-28.34,52.52,22.55L190,8.32v182.83Zm-174.29-7.71h166.58V24.31l-59.94,49.55-53.56-23.04-53.07,24.85v107.77Z"/>
-  <rect class="uuid-95f7dc4b-393b-490b-8f0c-5253b4525d5a" x="117.51" y="70.84" width="7.71" height="117.22"/>
-  <path class="uuid-95f7dc4b-393b-490b-8f0c-5253b4525d5a" d="m57.36,191.15H23.42v-47.03c0-8.88,6.57-16.69,15.41-17.49,10.05-.91,18.52,7.08,18.52,17.03v47.49Zm-26.22-7.71h18.51v-39.7c0-4.76-3.39-9.04-8.11-9.62-5.61-.69-10.4,3.81-10.4,9.43v39.89Z"/>
-  <rect class="uuid-95f7dc4b-393b-490b-8f0c-5253b4525d5a" x="137.56" y="77.01" width="33.93" height="7.71"/>
-  <rect class="uuid-95f7dc4b-393b-490b-8f0c-5253b4525d5a" x="137.56" y="104.77" width="33.93" height="7.71"/>
-  <rect class="uuid-95f7dc4b-393b-490b-8f0c-5253b4525d5a" x="137.56" y="130.99" width="33.93" height="7.71"/>
-  <rect class="uuid-95f7dc4b-393b-490b-8f0c-5253b4525d5a" x="137.56" y="157.21" width="33.93" height="7.71"/>
-  <path class="uuid-95f7dc4b-393b-490b-8f0c-5253b4525d5a" d="m111.34,104.77h-46.27v-23.14h46.27v23.14Zm-38.56-7.71h30.85v-7.71h-30.85v7.71Z"/>
-  <path class="uuid-95f7dc4b-393b-490b-8f0c-5253b4525d5a" d="m111.34,138.7h-46.27v-23.14h46.27v23.14Zm-38.56-7.71h30.85v-7.71h-30.85v7.71Z"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFDFD;}
+	.st1{fill:#FFFDFD;stroke:#FFFFFF;stroke-width:6;stroke-miterlimit:10;}
+</style>
+<g>
+	<g>
+		<g>
+			<g>
+				<path class="st0" d="M190,191.1H8V70.9l60.6-28.3l52.5,22.6L190,8.3V191.1z M15.7,183.4h166.6V24.3l-59.9,49.5l-53.6-23
+					L15.7,75.7V183.4z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="117.5" y="70.8" class="st0" width="7.7" height="117.2"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path class="st0" d="M57.4,191.1H23.4l0-47c0-8.9,6.6-16.7,15.4-17.5c10.1-0.9,18.5,7.1,18.5,17V191.1z M31.1,183.4h18.5l0-39.7
+					c0-4.8-3.4-9-8.1-9.6c-5.6-0.7-10.4,3.8-10.4,9.4V183.4z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="137.6" y="77" class="st0" width="33.9" height="7.7"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="137.6" y="104.8" class="st0" width="33.9" height="7.7"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="137.6" y="131" class="st0" width="33.9" height="7.7"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="137.6" y="157.2" class="st0" width="33.9" height="7.7"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path class="st0" d="M111.3,104.8H65.1V81.6h46.3V104.8z M72.8,97.1h30.8v-7.7H72.8V97.1z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path class="st0" d="M111.3,138.7H65.1v-23.1h46.3V138.7z M72.8,131h30.8v-7.7H72.8V131z"/>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

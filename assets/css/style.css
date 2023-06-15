@@ -6,7 +6,7 @@ https://www.joshwcomeau.com/css/custom-css-reset/ */
   --main-text-color: #352224;
   --secondary-text-color:#a52a2a;
   --super-big-h-size:9em;
-  --big-h-size:4em;
+  --normal-h-size:52px;
 }
 
 *, *::before, *::after {
@@ -240,6 +240,7 @@ header img {
     padding-bottom: 89px;
     text-align: center;
     padding-left: 3rem;
+    z-index: 10;
 } 
 
 #hero .intro .container {
@@ -253,7 +254,7 @@ header img {
 }
 
 h1.normal {
-  font-size:4em;
+  font-size:var(--normal-h-size);
   line-height: 1em;
 }
 
@@ -269,17 +270,46 @@ h1.big {
   margin-top: 20px;
 }
 
-#hero button {
-  margin-top: 20px;
-  background-color: var(--secondary-text-color);
-  border: 0;
-  border-radius: 30px;
-  padding: 10px 25px;
-  color: var(--main-bg-color);
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: 1px;
+.cta_button {
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  font-family: Visby CF;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  background: transparent;
+  outline: none;
   cursor: pointer;
+  padding: 12px 22px;
+  border-radius: 32px;
+  transition: all 1s ease;
+  border: 0;
+  background-color: var(--secondary-text-color);
+  color: var(--main-bg-color);
+}
+.cta_button .arrows_btn {
+  cursor: pointer;
+  overflow: hidden;
+  display: block;
+  max-width: 32px;
+}
+
+.cta_button .icons {
+  position: relative;
+  display: flex;
+  left: -100%;
+  width: 350%;
+  height: 30px;
+  transition: .3s ease-in-out;
+}
+
+.cta_button:hover .icons {
+  transform: translateX(30%);
 }
 
 #hero .Locations{
@@ -291,9 +321,11 @@ h1.big {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 3rem;
+  z-index: 15;
 }
 
-#hero .Locations .project, #hero .Locations .location {
+
+.location .project,.location .country, .location a  {
   display: block;
 }
 
@@ -301,13 +333,18 @@ h1.big {
   font-size: 14px;
 }
 
-#hero .Locations .location{
+.Locations .location {
+  cursor: pointer;
   font-size: 18px;
   text-transform: uppercase;
   position: relative;
+  border-bottom: 1px solid var(--secondary-text-color);
+  padding-bottom: 5px;
 }
-​#hero .Locations svg{
-  fill: #e2d326!important;
+
+.location a:hover .icon-arrow {
+  transform: translate(3px, -3px);
+  transition: all 0.2s ease-in-out;
 }
 
 #hero .Locations img{
@@ -336,24 +373,37 @@ h1.big {
   position: relative;
 }
 
-
 .feature .container {
   width: 50%;
 }
 
 .feature h2 {
   color:var(--secondary-text-color);
-  font-size: var(--big-h-size);
+  font-size: var(--normal-h-size);
+  font-weight: 400;
   line-height: 1em;
 }
 
-.feature p, .feature span{
+.feature p {
   color:var(--main-text-color)
+}
+
+.feature .key{
+  color:var(--main-bg-color);
+  font-size: 12px;
+  margin-top: 10px;
 }
 
 .feature p {
   font-weight: 400;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
+
+.feature .cta_button {
+  background: var(--main-text-color);
+}
+
 .section .feat-container .text-container {
   padding: 2em ;
 }
@@ -364,19 +414,15 @@ h1.big {
 }
 
 .keys img {
-  width: 60px;
+  width: 50px;
   margin: 0 auto;
 }
 
 .keys .item {
-  padding: 2em;
-  align-items: center;
+  padding: 1em;
   justify-items: center;
-
-}
-
-.keys .item.last {
-  border-width: 2px;
+  background: var(--secondary-text-color);
+  margin-right: 20px;
 }
 
 .gallery {
@@ -387,7 +433,9 @@ h1.big {
 .relative {
   position: relative;
 }
-
+.centered {
+  margin: 0 auto;
+}
 .row {
   display: flex;
 }
@@ -403,6 +451,10 @@ h1.big {
 }
 .pl {
   padding-left: 1rem;
+}
+
+.mt_30{
+  margin-top: 30px;
 }
 
 .pb_60{
@@ -421,27 +473,6 @@ h1.big {
   width: 33%;
 }
 
-.btn_section {
-  display: flex;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  justify-content: center;
-  align-items: center;
-  font-family: Visby CF;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 100%;
-  color: #fff;
-  background: transparent;
-  outline: none;
-  cursor: pointer;
-  padding: 12px 22px;
-  border: 1.2px solid #fff;
-  border-radius: 32px;
-  transition: all 1s ease;
-}
 
 @media screen and (max-width: 800px){
   
