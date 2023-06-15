@@ -23,25 +23,31 @@ function blurContent() {
 // Source credit: http://thenewcode.com/279/Rotate-Elements-on-Scroll-with-JavaScript
 
 let item1 = document.getElementById("item1"),
-item2 = document.getElementById("item2");
+item2 = document.getElementById("item2"),
+item3 = document.getElementById("scrollDown"),
+item4 = document.querySelector(".Locations");
 
     
 let container = document.getElementById("headingContainer")
 let rectContainer = container.getBoundingClientRect();
 
-let animate = (element,position) => {
+let animateHor = (element,position) => {
      element.style.transform = `translateX(${position}px)`
 } 
 
-       
+let animateVer = (element,position) => {
+    element.style.transform = `translateY(${position}px)`
+}        
 
 document.addEventListener('scroll', function(e) {
   lastKnownScrollPosition = window.scrollY;
     
    window.requestAnimationFrame(function() {
      
-      animate(item1,lastKnownScrollPosition*.2)
-      animate(item2,lastKnownScrollPosition*-.2)
+      animateHor(item1,lastKnownScrollPosition*.2)
+      animateHor(item2,lastKnownScrollPosition*-.2)
+      animateVer(item3,lastKnownScrollPosition*.2)
+      animateVer(item4,lastKnownScrollPosition*.2)
       
     });
 });

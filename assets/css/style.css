@@ -205,7 +205,6 @@ header img {
 }
 
 .fullpage {
-  font-family: sans-serif;
   height: 100%;
   width: 100%;
 }
@@ -229,17 +228,8 @@ header img {
   }
 
 #hero .intro {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: left;
-    -webkit-box-align: left;
-    -ms-flex-align: left;
     align-items: center;
-    -webkit-box-pack: left;
-    -ms-flex-pack: left;
-    -webkit-justify-content: left;
     justify-content: center;
     position: absolute;
     top: 0px;
@@ -292,35 +282,35 @@ h1.big {
   cursor: pointer;
 }
 
-#hero .PrLocations{
+#hero .Locations{
   display: flex;
   justify-content: space-between;
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-bottom: 3rem;
 }
 
-#hero .PrLocations .project, #hero .PrLocations .location {
+#hero .Locations .project, #hero .Locations .location {
   display: block;
 }
 
-#hero .PrLocations .project{
+#hero .Locations .project{
   font-size: 14px;
 }
 
-#hero .PrLocations .location{
+#hero .Locations .location{
   font-size: 18px;
   text-transform: uppercase;
   position: relative;
 }
-​#hero .PrLocations svg{
+​#hero .Locations svg{
   fill: #e2d326!important;
 }
 
-#hero .PrLocations img{
+#hero .Locations img{
   max-width: 10px;
   float: left;
   padding-top: 5px;
@@ -454,11 +444,17 @@ h1.big {
 }
 
 @media screen and (max-width: 800px){
-  #grid {
-    display: none;
+  
+  #hero .intro .container {
+    display: flex;
+    flex-flow: column;
   }
+
   #hero .intro {
+    height: auto;
+    position: relative;
     padding-bottom: 40px;
+    padding-top: 60px;
     text-align: center;
     padding-left: 1em;
     padding-right: 1em;
@@ -469,13 +465,15 @@ h1.big {
     line-height: 1em;
   }
 
-h1.big {
-    font-size: 6em;
-    margin-top: 0px;
+  h1.big {
+      font-size: 6em;
+      margin-top: 0px;
 
-}
-  #hero .PrLocations{
-    display: none;
+  }
+  #hero .Locations{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
   }
   #hero p {
     font-size: 16px;
