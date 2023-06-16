@@ -116,7 +116,7 @@ imagesLoaded( document.querySelector('#wrap'), function( instance ) {
 
 // Hack to include contact to the height of the main page
 
-document.body.style.height = document.getElementById("wrap").clientHeight - 400 + 'px';
+//document.body.style.height = document.getElementById("wrap").clientHeight - 400 + 'px';
 
 //Animations
 

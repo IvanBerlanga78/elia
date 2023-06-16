@@ -51,6 +51,10 @@ ul {
   margin-block-start: 0;
   padding-inline-start: 0;
 }
+
+ul li {
+  list-style-type: none;
+}
  
 #root, #__next {
     isolation: isolate;
@@ -479,12 +483,16 @@ h1.big {
 
 #contact {
   background-color: var(--main-text-color);
-  position: fixed;
   clear: both;
   width: 100%;
-  height: 400px;
-  bottom: 0;
+  font-size: 14px;
+  font-weight: 700;
 }
+
+#contact a {
+  font-size: 14px;
+}
+
 #contact .container {
   padding-top: 50px;
 }
@@ -493,13 +501,23 @@ h1.big {
   color:var(--main-bg-color);
 }
 
+#contact h2 {
+  font-size: 26px;
+  padding-right: 2em;
+}
+
+#contact .icons img {
+  max-width: 30px;
+  display: inline-block;
+}
+
 #about {
   position: relative;
   z-index: 10;
   background: #fff;
   text-align: center;
 }
-
+s
 #about h2 {
   padding-top: 2em;
   padding-bottom: 1em;
@@ -546,6 +564,10 @@ h1.big {
   margin-top: 30px;
 }
 
+.mt_10{
+  margin-top: 10px;
+}
+
 .mt_20{
   margin-top: 20px;
 }
@@ -571,6 +593,14 @@ h1.big {
 
 .pt_3{
   padding-top: 3em;
+}
+
+.pb_3{
+  padding-bottom: 3em;
+}
+
+.pr_5 {
+  padding-right: 5px;
 }
 
 .b_120 {
@@ -633,32 +663,49 @@ h1.big {
   }
   .feature .container {
     width: 100%;
- }
- .keys .item {
-  padding: 10px
- }
- #features .section_two_col { 
-  padding: 0;
-  width: 94%;
- }
- .row {
-  flex-direction: column;
- }
- .feature .gallery {
-  display: none;
- }
- #about .container-video {
-  width: 100%;
-  padding-left: 1em;
-  padding-right: 1em;
- }
+  }
+  .keys .item {
+    padding: 10px
+  }
+  #features .section_two_col { 
+    padding: 0;
+    width: 94%;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .feature .gallery {
+    display: none;
+  }
+  #about .container-video {
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
 
- .sm-w-full {
-  width: 100%;
- }
+  #contact {
+    text-align: center;
+  }
+  
+  #contact .cta_button {
+    margin: 0 auto;
+    margin-bottom: 3em;
+  }
 
- .flex.full {
-  flex-direction: column;
- }
+  #contact h2 {
+    margin-top: 3em;
+    padding-right: 0;
+  }
+
+  .sm-w-full {
+    width: 100%;
+  }
+
+  .flex.full {
+    flex-direction: column;
+  }
+  .sm-hide {
+    display: none;
+  }
 
 }
