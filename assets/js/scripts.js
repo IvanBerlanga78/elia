@@ -171,7 +171,7 @@ document.addEventListener('scroll', function(e) {
 
 //Intro screen
 
-imagesLoaded( document.querySelector('#main'), function( instance ) {
+imagesLoaded( document.querySelector('#wrap'), function( instance ) {
     setTimeout(function(){
         document.body.classList.add('loaded');
     }, 300);
