@@ -84,7 +84,7 @@ document.addEventListener('scroll', function(e) {
         if(isInViewport(d)===true) {
             animateHor(item1,lastKnownScrollPosition*.2)
             animateHor(item2,lastKnownScrollPosition*-.2)
-            animateVer(item3,lastKnownScrollPosition*-.2)            
+            animateVer(item3,lastKnownScrollPosition*.2)            
         }
  
       });
@@ -110,12 +110,41 @@ document.addEventListener('scroll', function(e) {
 imagesLoaded( document.querySelector('#wrap'), function( instance ) {
     setTimeout(function(){
         document.body.classList.add('loaded');
-    }, 300);
+    }, 1000);
 
   });
 
 // Hack to include contact to the height of the main page
 
-document.body.style.height = document.getElementById("wrap").clientHeight + 400 + 'px';
+document.body.style.height = document.getElementById("wrap").clientHeight - 400 + 'px';
 
+//Animations
+
+function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+
+// Slider
+
+var elem = document.querySelector('.slider');
+var flkty = new Flickity( elem, {
+  // options
+  contain: true,
+  autoPlay: true,
+  imagesLoaded: true
+});
 

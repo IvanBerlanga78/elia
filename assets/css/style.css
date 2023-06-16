@@ -45,6 +45,7 @@ a {
 p {
   color: var(--main-text-color);
   font-size: 18px;
+  font-weight: 600;
 }
 ul {
   margin-block-start: 0;
@@ -54,6 +55,17 @@ ul {
 #root, #__next {
     isolation: isolate;
   }
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 0.5s all ease;
+}
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
 
 /* General Styles */
 
@@ -318,36 +330,48 @@ h1.big {
   transform: translateX(30%);
 }
 
-#hero .Locations {
-  max-width: 1100px;
+#projects {
+  display: flex;
+  z-index: 10;
+  position: relative;
+  background: var(--main-bg-color);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 3em;
 }
 
-#hero .Locations .container{
-  display: flex;
-  justify-content: space-around;;
-  position: absolute;
-  bottom: 5%;
-  width: 100%;
+#projects .container{
+  display: block;
+  width: 50%;
+  margin:0 auto;
   padding-bottom: 3rem;
   z-index: 5;
 }
 
-
-.location .project,.location .country, .location a  {
-  display: block;
+.location .country {
+  font-weight: 700;
+  color: var(--secondary-text-color);
+  position: relative;
+  padding-bottom: 10px;
 }
 
-#hero .Locations .project{
+#projects .project{
   font-size: 14px;
+  font-weight: 600;
 }
 
-.Locations .location {
+#projects .location {
   cursor: pointer;
   font-size: 18px;
   text-transform: uppercase;
   position: relative;
-  border-bottom: 1px solid var(--secondary-text-color);
   padding-bottom: 5px;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+#projects .inner {
+  border-bottom: 2px solid var(--secondary-text-color);
 }
 
 .location a:hover .icon-arrow {
@@ -355,24 +379,38 @@ h1.big {
   transition: all 0.2s ease-in-out;
 }
 
-#hero .Locations img{
+#projects .thumb {
+  height: 150px;
+}
+
+#projects .bg-project {
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+#projects .icon{
   max-width: 10px;
   float: left;
   padding-top: 5px;
   margin-right: 5px;
 }
 
+.flickity-button {
+  display: none;
+}
+
 .icon-arrow {
   position: absolute;
   overflow: hidden;
   margin-left: 4px;
-  top: 26px;
+  top: 8px;
   right: 0;
 }
 
 #features {
   background: var(--main-bg-color);
-  padding-top: 30px;
   position: relative;
   z-index: 10;
 }
@@ -387,7 +425,7 @@ h1.big {
   width: 50%;
 }
 
-.feature h2, #about h2 {
+.feature h2, #projects h2 ,#about h2 {
   color:var(--secondary-text-color);
   font-size: var(--normal-h-size);
   font-weight: 400;
@@ -405,7 +443,6 @@ h1.big {
 }
 
 .feature p {
-  font-weight: 400;
   margin-top: 2em;
   margin-bottom: 2em;
 }
@@ -437,7 +474,7 @@ h1.big {
 
 .gallery {
   display: flex;
-  padding-bottom: 7rem;
+  align-items: center;
 }
 
 #contact {
@@ -509,8 +546,31 @@ h1.big {
   margin-top: 30px;
 }
 
+.mt_20{
+  margin-top: 20px;
+}
+
+.mb_20{
+  margin-bottom: 20px;
+}
+
 .pb_60{
   padding-bottom: 60px;
+}
+
+.pt_60{
+  padding-top: 60px;
+}
+.pt_30{
+  padding-top: 30px;
+}
+
+.pt_7{
+  padding-top: 7em;
+}
+
+.pt_3{
+  padding-top: 3em;
 }
 
 .b_120 {
@@ -563,11 +623,8 @@ h1.big {
   h1.big {
       font-size: 6em;
       margin-top: 0px;
+  }
 
-  }
-  #hero .Locations{
-    display: none;
-  }
   #hero p {
     font-size: 16px;
   }
@@ -590,9 +647,18 @@ h1.big {
  .feature .gallery {
   display: none;
  }
+ #about .container-video {
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+ }
 
- #contact {
-  position: relative;
+ .sm-w-full {
+  width: 100%;
+ }
+
+ .flex.full {
+  flex-direction: column;
  }
 
 }
